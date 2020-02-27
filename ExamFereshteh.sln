@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamFereshteh", "ExamFereshteh\ExamFereshteh.csproj", "{FA52FAF8-10F7-4260-8ABD-23F86F0C37B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamFereshteh.Tests", "ExamFereshteh.Tests\ExamFereshteh.Tests.csproj", "{BE9456CF-FD87-412C-B6A1-59478966715B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA52FAF8-10F7-4260-8ABD-23F86F0C37B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA52FAF8-10F7-4260-8ABD-23F86F0C37B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA52FAF8-10F7-4260-8ABD-23F86F0C37B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA52FAF8-10F7-4260-8ABD-23F86F0C37B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE9456CF-FD87-412C-B6A1-59478966715B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE9456CF-FD87-412C-B6A1-59478966715B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE9456CF-FD87-412C-B6A1-59478966715B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE9456CF-FD87-412C-B6A1-59478966715B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD8C8506-8244-4082-B311-B7774731B96E}
+	EndGlobalSection
+EndGlobal
