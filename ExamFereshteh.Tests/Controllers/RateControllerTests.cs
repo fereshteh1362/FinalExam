@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
 using ExamFereshteh.Models;
 using ExamFereshteh.Services.Factory;
 using ExamFereshteh.Services.Repository;
@@ -47,8 +45,8 @@ namespace ExamFereshteh.Controllers.Tests
         [TestMethod]
         public void DetailsTest()
         {
-            var id = 1;
-            var actual = _rateController.Details(1);
+            var id = 2;
+            var actual = _rateController.Details(2);
             Assert.IsNotNull(actual);
         }
 

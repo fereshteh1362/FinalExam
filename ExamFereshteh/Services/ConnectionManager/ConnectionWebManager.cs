@@ -1,10 +1,7 @@
 ﻿using ExamFereshteh.Services.Log;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 using Polly;
 
 namespace ExamFereshteh.Services.ConnectionManager

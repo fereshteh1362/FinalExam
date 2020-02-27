@@ -1,12 +1,11 @@
-﻿using System.Data.Entity;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using ExamFereshteh.DAL;
 using ExamFereshteh.Models;
 using ExamFereshteh.Services.Factory;
 using ExamFereshteh.Services.Repository;
+using ExamFereshteh.ViewModel;
 using Newtonsoft.Json;
 
 namespace ExamFereshteh.Controllers
@@ -41,7 +40,7 @@ namespace ExamFereshteh.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Transaction transaction = await _repository.GetById(id);
+            var transaction = await _repository.GetById(id);
             if (transaction == null)
             {
                 return HttpNotFound();
@@ -55,9 +54,7 @@ namespace ExamFereshteh.Controllers
             return View();
         }
 
-        // POST: Transaction/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Sku,Amount,Currency")] Transaction transaction)
@@ -89,9 +86,7 @@ namespace ExamFereshteh.Controllers
             return View(transaction);
         }
 
-        // POST: Transaction/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Sku,Amount,Currency")] Transaction transaction)
@@ -128,6 +123,25 @@ namespace ExamFereshteh.Controllers
             await _repository.Delete(id);
             await _repository.Save();
             return RedirectToAction("Index");
+        }
+
+        public async Task<ActionResult> GetListOfProductWithEuroCurrency()
+        {
+            var transactionTuple= await ((ITransactionRepository)_repository).GetAllWithEuroCurrency();
+            var vMList = new List<TransactionViewModel>();
+            foreach (var item in transactionTuple)
+            {
+                var sku = item.Item1;
+                var vmElement = new TransactionViewModel();
+                vmElement.Sku = item.Item1;
+                vmElement.Amount = item.Item2;
+                vMList.Add(vmElement);
+
+
+            }
+
+            return View(vMList);
+
         }
 
        

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ExamFereshteh.ViewModel.TransactionViewModel>
+    @{
+        ViewBag.Title = "GetListOfProductWithEuroCurrency";
+    }
+
+<h2>GetListOfProductWithEuroCurrency</h2>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sku)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sku)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+           
+           
+        </tr>
+    }
+</table>
+
+

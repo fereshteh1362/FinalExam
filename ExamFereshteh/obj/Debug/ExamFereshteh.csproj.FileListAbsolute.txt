@@ -205,3 +205,14 @@ C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\Effort.dll
 C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\NMemory.dll
 C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\Effort.xml
 C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\NMemory.xml
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\MiniProfiler.dll
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\MiniProfiler.EntityFramework.dll
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\MiniProfiler.Shared.dll
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\WebActivator.dll
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\MiniProfiler.xml
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\MiniProfiler.EntityFramework.pdb
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\MiniProfiler.Shared.xml
+C:\Users\holacons\source\repos\ExamFereshteh\ExamFereshteh\bin\System.Diagnostics.DiagnosticSource.xml

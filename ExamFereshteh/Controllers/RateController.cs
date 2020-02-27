@@ -56,9 +56,7 @@ namespace ExamFereshteh.Controllers
             return View();
         }
 
-        // POST: Rate/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,RateAmount,From,To")] Rate rate)

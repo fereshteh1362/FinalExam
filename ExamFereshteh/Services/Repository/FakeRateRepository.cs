@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using ExamFereshteh.Models;
 
 namespace ExamFereshteh.Services.Repository
 {
-    public class FakeRateRepository : IRepository<Rate>, ITransactionRepository
+    public class FakeRateRepository : IRepository<Rate>
     {
         List<Rate> misRates = new List<Rate>();
 

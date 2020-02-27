@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ExamFereshteh.Controllers;
 using ExamFereshteh.Models;
 using ExamFereshteh.Services.Factory;
@@ -23,18 +19,18 @@ namespace ExamFereshteh.Tests.Controllers
         public void TestInitialize()
         {
             _repository = new FakeRepository<Transaction>();
-           _repository.Add(new Transaction {Sku = "T2006", Amount = 10, Currency = "USD"});
+          
 
             _getTransactionsList= new GetTransactionsList();
             _transactionController = new TransactionController(_repository, _getTransactionsList);
            
             _transactions = new List<Transaction>
             {
-                new Transaction {Sku = "T2006", Amount = 10, Currency = "USD"},
-                new Transaction {Sku = "M2007", Amount = (decimal) 34.57, Currency = "CAD"},
-                new Transaction {Sku = "R2008", Amount = (decimal) 17.95, Currency = "USD"},
-                new Transaction {Sku = "T2006", Amount = (decimal) 7.63, Currency = "USD"},
-                new Transaction {Sku = "B2009", Amount = (decimal) 21.23, Currency = "USD"},
+                new Transaction {Id = 1, Sku = "T2006", Amount = 10, Currency = "USD"},
+                new Transaction {Id = 2,Sku = "M2007", Amount = (decimal) 34.57, Currency = "CAD"},
+                new Transaction {Id =3,Sku = "R2008", Amount = (decimal) 17.95, Currency = "USD"},
+                new Transaction {Id=4, Sku = "T2006", Amount = (decimal) 7.63, Currency = "USD"},
+                new Transaction {Id =5, Sku = "B2009", Amount = (decimal) 21.23, Currency = "USD"},
 
             };
 

@@ -46,7 +46,7 @@ namespace ExamFereshteh.Services.Repository
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Transaction>> GetAllWithEuroCurrency()
+        public async Task<List<Tuple<string, decimal>>> GetAllWithEuroCurrency()
         {
             throw new NotImplementedException();
         }

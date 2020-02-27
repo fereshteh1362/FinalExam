@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using ExamFereshteh.DAL;
 using ExamFereshteh.Models;
 
+
 namespace ExamFereshteh.Services.Repository
 {
-   
-    public class TransactionRepository: IRepository<Transaction>, ITransactionRepository
+
+    public class TransactionRepository : IRepository<Transaction>, ITransactionRepository
     {
         public DbContext _context { get; }
         public DbSet<Transaction> _table { get; }
@@ -21,7 +21,7 @@ namespace ExamFereshteh.Services.Repository
             _table = _context.Set<Transaction>();
         }
 
-        
+
         public TransactionRepository(DbContext context)
         {
             _context = context;
@@ -63,11 +63,48 @@ namespace ExamFereshteh.Services.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Transaction>> GetAllWithEuroCurrency()
+        public async Task<List<Tuple<string,decimal>>> GetAllWithEuroCurrency()
         {
-            return await _table.ToListAsync().ConfigureAwait(false);
+            var Count = _table.Count();
+            var ListWithEuroCurrancy = new List<Transaction>();
+            List<Tuple<string, decimal>> result = new List<Tuple<string, decimal>>();
+            for (int i = 0; i < Count; i++)
+            {
+               
+                foreach (var p in _table)
+                {
+                    ListWithEuroCurrancy[i].Sku= p.Sku;
+                    ListWithEuroCurrancy[i].Currency = "EUR";
+                    if (p.Currency == "USD")
+                    {
+                        ListWithEuroCurrancy[i].Amount = p.Amount * (decimal) 0.736;
+                    }
+                    else if (p.Currency == "CAD")
+                    {
+                        ListWithEuroCurrancy[i].Amount = p.Amount * (decimal) 0.732;
+
+                    }
+                    else ListWithEuroCurrancy[i].Amount = p.Amount;
+
+                }
+            }
+
+            var FinalList = ListWithEuroCurrancy.GroupBy(x => x.Sku).Select(p => new
+            {
+                productName = p.Key,
+                totalAmountInEuro = p.Sum(d => d.Amount)
+            }).ToList();
+
+            foreach (var item in FinalList)
+            {
+                Tuple<string, decimal> productTuple =
+                    new Tuple<string, decimal>(item.productName, item.totalAmountInEuro);
+                result.Add(productTuple);
+            }
+
+            return result;
 
         }
-
     }
+
 }
